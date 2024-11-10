@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h2>Posts</h2>
+    <div id="posts-container"></div>
+
+    <script>
+        async function fetchPosts() {
+            const response = await fetch('http://localhost:3000/posts');
+            const posts = await response.json();
+            const container = document.getElementById('posts-container');
+            container.innerHTML = '';
+
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.innerHTML = `
+                    <h3>${post.university_name}</h3>
+                    <p>${post.issue_description}</p>
+                    <p>Likes: ${post.like_count}</p>
+                    <button onclick="likePost(${post.post_id})">Like</button>
+                `;
+                container.appendChild(postElement);
+            });
+        }
+
+        async function likePost(post_id) {
+            await fetch(`http://localhost:3000/posts/${post_id}/like`, { method: 'POST' });
+            fetchPosts(); // Refresh posts to update like count
+        }
+
+        fetchPosts();
+    </script>
+</body>
+</html>
+

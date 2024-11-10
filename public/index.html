@@ -1,0 +1,35 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SUNY Student Issues</title>
+    <link rel="stylesheet" href="indexcss.css">
+</head>
+<body>
+    <!-- Existing content -->
+    <header>
+        <div class="navbar">
+            <img src="suny-logo.png" alt="SUNY Logo" class="logo">
+            <h1>SUNY Student Issues</h1>
+            <button id="submit-button">Submit a New Issue</button>
+        </div>
+    </header>
+    <main>
+        <div id="posts"></div>
+    </main>
+    
+    <!-- Add the footer here -->
+    <footer>
+        <p class="footer-text">Of the students, by the students, for the students</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+      document.getElementById('submit-button').addEventListener('click', () => {
+        window.location.href = '/submit';
+      });
+    </script>
+</body>
+</html>

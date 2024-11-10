@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+</head>
+<body>
+    <h2>Create a Post</h2>
+    <form id="postForm">
+        <label for="university_name">University Name:</label>
+        <input type="text" id="university_name" required><br>
+        <label for="issue_description">Issue Description:</label>
+        <textarea id="issue_description" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const university_name = document.getElementById('university_name').value;
+        const issue_description = document.getElementById('issue_description').value;
+        
+        try {
+            const response = await fetch('http://localhost:3000/posts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ university_name, issue_description })
+            });
+            
+            if (response.ok) {
+            alert('Post created successfully!');
+            window.location.href = 'posts.html';
+            } else {
+            alert('Failed to create post');
+            }
+        } catch (error) {
+            console.error("Error in fetch:", error);
+            alert('An error occurred while creating the post');
+        }
+        });
+    </script>
+</body>
+</html>

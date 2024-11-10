@@ -1,0 +1,249 @@
+/* public/styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #003060;
+}
+
+/* Navbar Styles */
+header {
+    background-color: white;
+    color: #003060;
+    padding: 10px 20px;
+    border-bottom: 2px solid #003060;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+}
+
+header h1 {
+    margin: 0 20px;
+    flex-grow: 1;
+    font-size: 24px;
+    color: #003060;
+}
+
+header button {
+    background-color: #003060;
+    color: white;
+    border: 2px solid #003060;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button:hover {
+    background-color: white;
+    color: #003060;
+    /* Border remains the same */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+/* Posts Styling */
+#posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post-block {
+    background-color: white;
+    border: 2px solid #003060;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.post-block:hover {
+    background-color: #003060;
+    color: white;
+}
+
+.post-block:hover .post-title,
+.post-block:hover .post-university,
+.post-block:hover .post-issue,
+.post-block:hover .post-likes {
+    color: white;
+}
+
+.post-title,
+.post-university,
+.post-issue,
+.post-likes {
+    transition: color 0.3s ease;
+}
+
+.post-title {
+    font-size: 1.5em;
+    margin-top: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: #003060;
+}
+
+.post-university {
+    font-weight: bold;
+    margin: 10px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.post-issue {
+    font-size: 1em;
+    margin: 10px 0;
+    flex-grow: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Like Button */
+.like-button {
+    background-color: #003060;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.like-button:hover {
+    background-color: #002346;
+}
+
+/* Adjust Like Button on Post Hover */
+.post-block:hover .like-button {
+    background-color: white;
+    color: #003060;
+}
+
+.post-block:hover .like-button:hover {
+    background-color: #e6e6e6;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust as needed */
+    background-color: white; /* Match the page background */
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-text {
+    font-size: 24px;
+    color: #003060;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #003060;
+    animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite;
+    max-width: 0;
+}
+
+/* Existing styles */
+
+/* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container label {
+    font-size: 18px;
+    color: #003060;
+}
+
+.form-container input[type="text"],
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #003060;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: #003060;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: white;
+    color: #003060;
+    border: 2px solid #003060;
+}
+
+
+@keyframes typing {
+    from { max-width: 0; }
+    to { max-width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #003060; }
+}
+
+/* Optional: Adjust footer text for mobile devices */
+@media screen and (max-width: 480px) {
+    .footer-text {
+        font-size: 18px;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .post-block {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-block {
+        width: 100%;
+    }
+}

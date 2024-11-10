@@ -1,0 +1,117 @@
+<!-- public/submit.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a New Issue</title>
+    <link rel="stylesheet" href="indexcss.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+          <a href="/">
+            <img src="suny-logo.png" alt="SUNY Logo" class="logo">
+        </a>
+            <h1>Submit a New Issue</h1>
+            <button onclick="window.location.href='/'">Home</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <form id="issue-form" method="POST" action="/posts">
+                <!-- Title Field -->
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br><br>
+
+                <!-- University Name Dropdown -->
+                <label for="university_name">University Name:</label><br>
+                <select id="university_name" name="university_name" required>
+                    <option value="" disabled selected>Select a University</option>
+                    <option value="SUNY Adirondack">SUNY Adirondack</option>
+                    <option value="University at Albany">University at Albany</option>
+                    <option value="Alfred State College">Alfred State College</option>
+                    <option value="NYS College of Ceramics at Alfred University">NYS College of Ceramics at Alfred University</option>
+                    <option value="Binghamton University">Binghamton University</option>
+                    <option value="SUNY Brockport">SUNY Brockport</option>
+                    <option value="SUNY Broome Community College">SUNY Broome Community College</option>
+                    <option value="University at Buffalo">University at Buffalo</option>
+                    <option value="Buffalo State University">Buffalo State University</option>
+                    <option value="SUNY Canton">SUNY Canton</option>
+                    <option value="Cayuga Community College">Cayuga Community College</option>
+                    <option value="Clinton Community College">Clinton Community College</option>
+                    <option value="SUNY Cobleskill">SUNY Cobleskill</option>
+                    <option value="Columbia-Greene Community College">Columbia-Greene Community College</option>
+                    <option value="NYS College of Agriculture & Life Sciences at Cornell University">NYS College of Agriculture & Life Sciences at Cornell University</option>
+                    <option value="NYS College of Human Ecology at Cornell University">NYS College of Human Ecology at Cornell University</option>
+                    <option value="NYS School of Industrial & Labor Relations at Cornell University">NYS School of Industrial & Labor Relations at Cornell University</option>
+                    <option value="NYS College of Veterinary Medicine at Cornell University">NYS College of Veterinary Medicine at Cornell University</option>
+                    <option value="Corning Community College">Corning Community College</option>
+                    <option value="SUNY Cortland">SUNY Cortland</option>
+                    <option value="SUNY Delhi">SUNY Delhi</option>
+                    <option value="SUNY Downstate Health Sciences University">SUNY Downstate Health Sciences University</option>
+                    <option value="Dutchess Community College">Dutchess Community College</option>
+                    <option value="SUNY Empire State University">SUNY Empire State University</option>
+                    <option value="SUNY College of Environmental Science and Forestry (ESF)">SUNY College of Environmental Science and Forestry (ESF)</option>
+                    <option value="Erie Community College">Erie Community College</option>
+                    <option value="Farmingdale State College">Farmingdale State College</option>
+                    <option value="Fashion Institute of Technology (FIT)">Fashion Institute of Technology (FIT)</option>
+                    <option value="Finger Lakes Community College">Finger Lakes Community College</option>
+                    <option value="SUNY Fredonia">SUNY Fredonia</option>
+                    <option value="Fulton-Montgomery Community College">Fulton-Montgomery Community College</option>
+                    <option value="Genesee Community College">Genesee Community College</option>
+                    <option value="SUNY Geneseo">SUNY Geneseo</option>
+                    <option value="Herkimer County Community College">Herkimer County Community College</option>
+                    <option value="Hudson Valley Community College">Hudson Valley Community College</option>
+                    <option value="Jamestown Community College">Jamestown Community College</option>
+                    <option value="Jefferson Community College">Jefferson Community College</option>
+                    <option value="Maritime College">Maritime College</option>
+                    <option value="Mohawk Valley Community College">Mohawk Valley Community College</option>
+                    <option value="Monroe Community College">Monroe Community College</option>
+                    <option value="SUNY Morrisville">SUNY Morrisville</option>
+                    <option value="Nassau Community College">Nassau Community College</option>
+                    <option value="SUNY New Paltz">SUNY New Paltz</option>
+                    <option value="SUNY Niagara Community College">SUNY Niagara Community College</option>
+                    <option value="North Country Community College">North Country Community College</option>
+                    <option value="SUNY Old Westbury">SUNY Old Westbury</option>
+                    <option value="SUNY Oneonta">SUNY Oneonta</option>
+                    <option value="Onondaga Community College">Onondaga Community College</option>
+                    <option value="College of Optometry">College of Optometry</option>
+                    <option value="Orange County Community College">Orange County Community College</option>
+                    <option value="SUNY Oswego">SUNY Oswego</option>
+                    <option value="SUNY Plattsburgh">SUNY Plattsburgh</option>
+                    <option value="SUNY Potsdam">SUNY Potsdam</option>
+                    <option value="Purchase College">Purchase College</option>
+                    <option value="Rockland Community College">Rockland Community College</option>
+                    <option value="SUNY Schenectady County Community College">SUNY Schenectady County Community College</option>
+                    <option value="Stony Brook University">Stony Brook University</option>
+                    <option value="Suffolk County Community College">Suffolk County Community College</option>
+                    <option value="Sullivan County Community College">Sullivan County Community College</option>
+                    <option value="SUNY Polytechnic Institute">SUNY Polytechnic Institute</option>
+                    <option value="Tompkins Cortland Community College">Tompkins Cortland Community College</option>
+                    <option value="Ulster County Community College">Ulster County Community College</option>
+                    <option value="Upstate Medical University">Upstate Medical University</option>
+                    <option value="Westchester Community College">Westchester Community College</option>
+                    <!-- Add more universities as needed -->
+                </select><br><br>
+
+                <!-- Issue Field -->
+                <label for="issue">Issue:</label><br>
+                <textarea id="issue" name="issue" rows="5" cols="40" required></textarea><br><br>
+
+                <input type="submit" value="Submit" class="submit-button">
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">Of the students, by the students, for the students</p>
+    </footer>
+
+    <!-- Include submit.js if using JavaScript submission -->
+    <!-- <script src="submit.js"></script> -->
+</body>
+</html>
