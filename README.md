@@ -103,14 +103,6 @@ Routes
 | POST        | `/posts`               | Creates a new post.                            |
 | POST        | `/posts/:post_id/like` | Increments the like count for a specific post. |
 
-Screenshots
------------
-
-*Homepage*
-
-*Create a Post*
-
-*Like a Post*
 
 Contributing
 ------------
@@ -127,10 +119,6 @@ Contributions are welcome! Please follow these steps:
 
 4. **Push to your fork and submit a pull request.**
 
-License
--------
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
 -------
